@@ -1,0 +1,23 @@
+{
+  "title": "Urban heat islands — class report",
+  "brand": { "kicker": "GEOG 240" },
+  "theme": "forest",
+  "section": "Urban heat islands",
+  "footer": "Group 4  ·  Week 6 report",
+  "slides": [
+    { "type": "cover", "title": "Why cities stay hot at night", "subtitle": "Urban heat islands in three\nAmerican cities, 2015–2025", "body": "Group 4: Rich Liu, Ana Ruiz, Sam Park", "byline": "GEOG 240  ·  Week 6", "date": "9 September 2026" },
+    { "type": "bullets", "numbered": true, "title": "We asked three questions", "subtitle": "Scope of this report.",
+      "items": [ { "text": "How much warmer are city centres than their suburbs at night?", "detail": "Using NOAA station pairs, 2015–2025" }, { "text": "Which surface features explain the difference?", "detail": "Tree cover, roof albedo, road density" }, { "text": "What has worked where cities intervened?", "detail": "Cool-roof and tree programmes in Phoenix, Chicago, Atlanta" } ] },
+    { "type": "chart", "chart": "bar", "title": "Night-time gaps reach 4 °C in Phoenix", "subtitle": "Mean summer night temperature difference, city centre minus suburb, 2015–2025.", "source": "[1] NOAA ISD station pairs; our calculation.",
+      "labels": ["Phoenix", "Atlanta", "Chicago"], "series": [ { "name": "°C warmer at night", "values": [4.1, 2.6, 2.2] } ], "format": "0.0",
+      "insight": "Phoenix has the least tree cover of the three and the most paved surface.\n\nAtlanta's gap has narrowed since its 2019 tree ordinance.",
+      "callout": "The gap is largest where there is the least shade." },
+    { "type": "quote", "title": "Heat is stored, not just received", "subtitle": "The mechanism in one sentence.", "text": "\"Dark roofs and asphalt absorb heat all day and release it after sunset, so the city cools hours later than the countryside.\"", "attribution": "Oke, T. R. (1982), adapted", "source": "[2] Oke 1982, Quarterly Journal of the Royal Meteorological Society." },
+    { "type": "cards", "title": "Two interventions cut the gap; one did not", "subtitle": "Evaluations published 2020–2025.", "source": "[3] City programme evaluations; see references.",
+      "cards": [ { "heading": "Cool roofs", "body": "Phoenix, 2021–2024.\nReflective coating on\n3,000 municipal roofs.", "emphasis": "−1.2 °C measured nearby." }, { "heading": "Street trees", "body": "Atlanta, 2019–2025.\n40,000 trees planted\nin the densest wards.", "emphasis": "−0.8 °C after five years." }, { "heading": "Water misting", "body": "Chicago pilot, 2022.\nMisters at bus stops.", "emphasis": "No measurable change." } ],
+      "callout": "Shade and reflectivity work; adding water alone does not." },
+    { "type": "references", "section": "References", "title": "References", "subtitle": "All sources accessed September 2026.",
+      "entries": [ { "label": "[1] NOAA ISD", "text": "Integrated Surface Database, station pairs\nfor Phoenix, Atlanta, Chicago.", "link": { "text": "ncei.noaa.gov", "url": "https://www.ncei.noaa.gov/" } }, { "label": "[2] Oke (1982)", "text": "The energetic basis of the urban heat island.\nQ. J. R. Meteorol. Soc., 108(455).", "link": { "text": "doi:10.1002/qj.49710845502", "url": "https://doi.org/10.1002/qj.49710845502" } }, { "label": "[3] City evaluations", "text": "Phoenix Cool Roof report 2024; Atlanta Tree\nCanopy study 2025; Chicago DOT pilot memo 2022.", "link": "Municipal publications" } ] },
+    { "type": "closing", "title": "Questions?", "body": "Data and notebooks are in the shared folder.", "lines": ["Group 4  ·  GEOG 240"] }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "title": "Harbor Tutor — team update",
+  "author": "HARBOR LABS",
+  "brand": { "kicker": "HARBOR LABS", "logo": "harbor-logo.png" },
+  "theme": "gold",
+  "section": "Harbor Tutor",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Harbor Tutor",
+      "subtitle": "From lesson scripts to a clearer\nstudent conversation",
+      "body": "The team shipped pacing, privacy handling and a\nreview flow that lets students finish on their own terms.",
+      "milestone": { "label": "Next milestone", "text": "Verify one agreed experience with a pilot class." },
+      "footer": { "org": "HARBOR LABS × CITY SCHOOLS", "line": "Team update  |  8 September 2026", "meta": "Review window: 18 Aug–8 Sep\nSource reviewed through 3 Sep; live state unverified." },
+      "notes": "Open with the milestone, not the feature list."
+    },
+    {
+      "type": "cards",
+      "title": "Harbor turns the district's scripts into a chat experience",
+      "subtitle": "City Schools supplies the curriculum and review rules. Harbor Labs implements the application.",
+      "source": "[2,4] Curriculum pack v9; reviewed application source at dev 4e7d8fe.",
+      "cards": [
+        { "heading": "Deliver the lesson", "body": "Turn scripts into steps,\nbuttons, branches and endings.", "emphasis": "Keep each reply tied to the\nactive question." },
+        { "heading": "Handle questions", "body": "Use fixed recaps for review;\nretrieve course material\nfor AI-assisted answers.", "emphasis": "Apply routing, privacy handling\nand response checks." },
+        { "heading": "Operate the service", "body": "Connect the chat channel to\nthe cloud; store progress and\nmanage message delivery.", "emphasis": "Provide admin, scheduling\nand diagnostic logs." }
+      ],
+      "note": "Recent focus: implement the revised flow and address feedback on pacing, privacy, review and context.",
+      "callout": "This update is about how the application delivers the content and responds to students."
+    },
+    {
+      "type": "flow",
+      "title": "The cloud does the work behind every reply",
+      "subtitle": "Students stay in the chat app. Harbor's service coordinates the work in the cloud.",
+      "source": "[4] Simplified source architecture: webhook, lesson handler, orchestrator, retrieval and pacer; live state unverified.",
+      "steps": [
+        { "heading": "Student sends", "body": "A question, reflection\nor button choice\narrives in chat." },
+        { "heading": "Service decides", "body": "Check the current step\nand choose a lesson\naction or an answer." },
+        { "heading": "Prepare the reply", "body": "Use scripted content\nor course material\nto support an AI reply." },
+        { "heading": "Reply in chat", "body": "Send the response;\nwait for input or\ncontinue the lesson." }
+      ],
+      "banner": { "heading": "Behind the scenes", "body": "Keep lesson progress  •  Look up course content  •  Schedule messages  •  Record issues for the team" },
+      "callout": "Harbor builds the coordination: what happens next, which content is used, and how the reply arrives."
+    },
+    {
+      "type": "table",
+      "title": "How feedback became application changes",
+      "subtitle": "Feedback and revised scripts informed changes in the dev branch, 25 August–3 September 2026.",
+      "source": "[3,4] Dated feedback + dev commits 9b45e4a, 9e3836f, 7d430cd, d74b354.",
+      "columns": ["Feedback / curriculum request", "What we implemented", "Change for the student"],
+      "rows": [
+        ["Messages arrive too quickly\n(July feedback)", "Queued delivery with a 6 s default\nbetween consecutive messages.", "Messages arrive in a paced\nsequence, not one burst."],
+        ["Protect personal information\nwithout derailing the activity", "Redact detected personal details;\ncontinue with a brief privacy note.", "The question continues after\ndetected details are removed."],
+        ["Offer review and a clear exit\n(revised Week 6 scripts)", "Review another topic, BUILD or\nCONTINUE; fix SHARE continuation.", "Review can finish without forcing\nthe student to write a summary."],
+        ["Keep replies in the right context", "Add future-week gates; separate\nrouter instructions from guardrails.", "Known-week requests can be gated;\ninternal prompts avoid misrouting."]
+      ],
+      "callout": "Implemented in reviewed code. Live deployment, timing and complete student journeys still need verification."
+    },
+    {
+      "type": "options",
+      "title": "The review flow gives students a clear way to finish",
+      "subtitle": "Illustration from the supplied scripts and reviewed code; this is not a live transcript.",
+      "source": "[2,4] Curriculum pack v9 p497–506; lesson handler review loop at dev 4e7d8fe.",
+      "tag": "STUDENT CHOICE",
+      "headline": "REVIEW THE FOUR QUESTIONS  →  ACCURACY",
+      "excerpt": { "tag": "FIXED RECAP · EXCERPT", "heading": "Week 2 — AI is Not Always Right", "subheading": "Is this accurate enough for my context?", "body": "Confidence is not evidence. I verify important\ninformation before I use or share it." },
+      "right_heading": "Then the student decides",
+      "options": [
+        { "label": "REVIEW ANOTHER", "text": "Return to the topic selector." },
+        { "label": "BUILD MY NOTES", "text": "Paste or write statements now." },
+        { "label": "CONTINUE", "text": "Resume the shared Week 6 flow." }
+      ],
+      "note": { "text": "Week 6 production approval is not established by the supplied materials.", "muted": true },
+      "callout": "Reviewing the curriculum does not require reconstructing a student's earlier answers."
+    },
+    {
+      "type": "stats",
+      "title": "Specific components passed limited independent checks",
+      "subtitle": "Offline checks on the frozen development revision, compared with the supplied v9 document.",
+      "source": "[4] Review dated 8 Sep 2026; OFFLINE_CHECKS.json; source revision 4e7d8fe.",
+      "stats": [
+        { "value": "30 / 30", "label": "Recap text fields match v9", "detail": "6 recaps × 5 fields. Comparison normalized\nwhitespace and bold markers." },
+        { "value": "19 / 19", "label": "Deterministic helper checks pass", "detail": "6 topic mappings + 2 request cases\n+ 11 questions about remembered answers." }
+      ],
+      "banner": "These numbers describe component checks, not a student success rate.",
+      "note": "Historical full-suite totals are developer-reported and were not rerun here.\nLive chat behavior, cloud deployment and learning outcomes remain unverified.",
+      "callout": "The evidence supports targeted implementation progress, with whole-experience validation still needed."
+    },
+    {
+      "type": "cards",
+      "numbering": "01",
+      "divider": true,
+      "title": "Three decisions will make the next test meaningful",
+      "subtitle": "Discussion agenda for content owners and the technical team.",
+      "source": "[2,4] Curriculum pack v9 approval gates; inspected storage and transparency paths.",
+      "cards": [
+        { "heading": "One release candidate", "body": "The supplied pack still\ncontains Week 6 approval\nand migration gates.", "emphasis": "Record the approved pack and\nthe deployed code, lesson\nand knowledge-base revisions." },
+        { "heading": "Memory and recall", "body": "Documents limit personal recall;\nreviewed code retains\nper-user content.", "emphasis": "Agree what may be stored,\nretrieved and deleted. Align\nthe wording students see." },
+        { "heading": "Response transparency", "body": "Older guidance requires badges;\nv9 recommends deferring\na runtime-badging decision.", "emphasis": "Choose one provenance rule\nand explain what “curated”\nand “generated” mean." }
+      ],
+      "note": "Also complete the six direct help links, with optional-resource and connectivity guidance.",
+      "callout": "Resolve the content and behavior together, so the next feedback round evaluates one agreed experience."
+    },
+    {
+      "type": "next",
+      "title": "Next milestone: test one agreed experience",
+      "subtitle": "Progress is visible in the curriculum and development source.\nThe next evidence should come from the complete student experience.",
+      "cards": [
+        { "heading": "1  Verify the complete conversation", "body": "Test privacy handling, active-lesson questions,\nWeek 5 refinement, Week 6 exits and retries.", "detail": "Look for the expected branch, clear next action,\ncorrect ending and observed delivery timing." },
+        { "heading": "2  Evaluate student judgment", "body": "Use scenarios before and after\nthe journey to assess use of the four questions.", "detail": "Define the rubric, participants and missing\nresponses before interpreting any change." }
+      ],
+      "banner": "Team-lead focus: align decisions, freeze the candidate, then request targeted feedback.",
+      "footer_label": "Proposed next work",
+      "source": "Technical checks and learning evaluation answer different questions."
+    },
+    {
+      "type": "references",
+      "section": "References",
+      "title": "References and evidence scope",
+      "subtitle": "Public frameworks support the rationale; versioned project sources support the progress claims.",
+      "source": "Sources checked for this update on 8 Sep 2026. Private repository and internal documents may require access.",
+      "entries": [
+        { "label": "[1] UNESCO (2024)", "text": "Miao, F. & Cukurova, M.\nAI competency framework for teachers.", "link": { "text": "UNESCO publication", "url": "https://unesdoc.unesco.org/ark:/48223/pf0000391104" } },
+        { "label": "[2] Curriculum pack", "text": "Lesson scripts v9 + companion v7;\nframework connections v3.", "link": "Latest supplied pair; approval limits retained." },
+        { "label": "[3] Feedback and correspondence", "text": "Written feedback: Apr / Jun / 21 Jul 2026.\nScript correspondence: Aug / 1 Sep.", "link": "Dated observations and partner requests." },
+        { "label": "[4] Source review", "text": "dev = feat/batch-0903 at 4e7d8fe (3 Sep).\n49 limited offline checks; live state unverified.", "link": "Immutable repository revision" }
+      ],
+      "callout": "Design intent, implemented code, deployment and demonstrated learning are different kinds of evidence."
+    },
+    {
+      "type": "flow",
+      "section": "Technical appendix",
+      "title": "Technical appendix: two paths through the backend",
+      "subtitle": "Functions run on demand. Arrows show the main request paths; supporting services are below.",
+      "source": "[4] infra/api-gateway.tf; webhook/handler.py; orchestrator/handler.py; shared/lesson_handler.py.",
+      "steps": [
+        { "heading": "Chat provider", "body": "Message or button event\n→ HTTP API Gateway" },
+        { "heading": "Webhook function", "body": "Signature / duplicate checks;\nrecognize the incoming event." }
+      ],
+      "branches": [
+        { "heading": "Active lesson button", "body": "Call the lesson handler directly." },
+        { "heading": "Text / other interaction", "body": "Invoke the orchestrator asynchronously." }
+      ],
+      "statement": "The webhook can acknowledge receipt before the orchestrator finishes. Replies use the provider's API.",
+      "cards": [
+        { "heading": "Key-value store", "body": "Lesson steps, progress,\ndelivery state and user data." },
+        { "heading": "Retrieval + LLM", "body": "Retrieve course passages;\ngenerate and check replies." },
+        { "heading": "Queue + pacer", "body": "Schedule the next lesson\nmessage; reject stale events." }
+      ],
+      "callout": "The lesson engine is shared code used by multiple functions; it is not a separate AI agent."
+    }
+  ]
+}

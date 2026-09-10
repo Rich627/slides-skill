@@ -1,0 +1,16 @@
+{
+  "name": "slides-skill",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Agent skill that generates editable .pptx decks from a JSON spec with pptxgenjs.",
+  "repository": { "type": "git", "url": "https://github.com/Rich627/slides-skill.git" },
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node scripts/build_examples.js",
+    "test": "node scripts/build_examples.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}
