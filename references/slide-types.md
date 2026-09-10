@@ -1,5 +1,19 @@
 # Slide types and fields
 
+## Deck-level keys
+```json
+{ "title": "File title", "author": "optional",
+  "brand": { "kicker": "GEOG 240", "logo": "logo.png", "logoBox": true },   // chip text + top-right logo, both optional
+  "theme": "navy",                        // preset name, or { "preset": "navy", "accent": "123456", "font": "Microsoft JhengHei", ... }
+  "section": "default section label",     // per-slide "section" overrides
+  "footer": "default footer text",        // used when a slide has no "source"
+  "slides": [ … ] }
+```
+`logoBox: false` drops the white plate behind the logo on dark slides; use it for logos
+that carry their own background. Image paths are relative to the JSON file.
+
+## Per-slide keys
+
 Light slides accept: `title`, `subtitle`, `section`, `source`, `note`, `callout`, `notes`.
 `note` may be a string (ink, 17.25 pt) or `{ "text": "...", "muted": true }` (grey caveat).
 Content starts higher when `subtitle` is omitted.
